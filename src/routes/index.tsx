@@ -24,6 +24,7 @@ import meter from "@/assets/meter.png.asset.json";
 import charcoal from "@/assets/charcoal.jpg.asset.json";
 import unitMarket from "@/assets/unit-market.png.asset.json";
 import digester from "@/assets/digester.png.asset.json";
+import founder from "@/assets/founder.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
