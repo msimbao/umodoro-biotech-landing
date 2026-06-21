@@ -154,7 +154,7 @@ function Index() {
               days over open charcoal fires — and they told us they&apos;d gladly switch to a cleaner,
               cheaper option.
             </p>
-            <blockquote className="mt-6 rounded-2xl border-l-4 border-accent bg-muted p-5 text-sm italic text-foreground">
+            <blockquote className="mt-6 rounded-2xl bg-muted p-5 text-sm italic text-foreground">
               &ldquo;We work for 14 hours… our heads hurt and we feel like fainting every day. We
               would gladly switch to a cheaper, cleaner option.&rdquo;
               <span className="mt-2 block text-xs not-italic text-muted-foreground">
