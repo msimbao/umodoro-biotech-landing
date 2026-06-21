@@ -341,7 +341,7 @@ function Index() {
             <img
               src={founder.url}
               alt="Mphatso Simbao, founder of Umodoro Biotechnology, receiving an award certificate"
-              className="aspect-[4/3] w-full object-cover object-top"
+              className="w-full"
               loading="lazy"
             />
             <div className="p-7">
