@@ -24,6 +24,7 @@ import meter from "@/assets/meter.png.asset.json";
 import charcoal from "@/assets/charcoal.jpg.asset.json";
 import unitMarket from "@/assets/unit-market.png.asset.json";
 import digester from "@/assets/digester.png.asset.json";
+import founder from "@/assets/founder.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -154,7 +155,7 @@ function Index() {
               days over open charcoal fires — and they told us they&apos;d gladly switch to a cleaner,
               cheaper option.
             </p>
-            <blockquote className="mt-6 rounded-2xl border-l-4 border-accent bg-muted p-5 text-sm italic text-foreground">
+            <blockquote className="mt-6 rounded-2xl bg-muted p-5 text-sm italic text-foreground">
               &ldquo;We work for 14 hours… our heads hurt and we feel like fainting every day. We
               would gladly switch to a cheaper, cleaner option.&rdquo;
               <span className="mt-2 block text-xs not-italic text-muted-foreground">
@@ -336,21 +337,38 @@ function Index() {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-3xl border border-accent/30 bg-secondary/40 p-7 shadow-soft">
-            <span className="text-xs font-600 uppercase tracking-[0.18em] text-primary">Founder</span>
-            <h3 className="mt-2 font-display text-2xl font-700">Mphatso Simbao</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              7+ years in biotech across the USA &amp; Zambia. 2+ years and $3,000 personally invested
-              in Umodoro prototypes. Winner of the 2026 FACE NDC Green Innovation Challenge.
-            </p>
+          <div className="overflow-hidden rounded-lg border border-accent/30 bg-secondary/40 shadow-soft">
+            <img
+              src={founder.url}
+              alt="Mphatso Simbao, founder of Umodoro Biotechnology, receiving an award certificate"
+              className="aspect-[4/3] w-full object-cover object-top"
+              loading="lazy"
+            />
+            <div className="p-7">
+              <span className="text-xs font-600 uppercase tracking-[0.18em] text-primary">Founder</span>
+              <h3 className="mt-2 font-display text-2xl font-700">Mphatso Simbao</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                7+ years in biotech across the USA &amp; Zambia. 2+ years and $3,000 personally invested
+                in Umodoro prototypes. Winner of the 2026 FACE NDC Green Innovation Challenge.
+              </p>
+            </div>
           </div>
           <div className="grid gap-5">
             {[
-              { name: "Blessing Gondwe", role: "Private Sector Engagement Consultant — FAO" },
-              { name: "Dr T.H. Culhane", role: "Pioneer of modular Solar Cities digesters" },
-              { name: "Dr K. Banda", role: "Pioneer in waste management practices" },
+              {
+                name: "Mr Blessing Gondwe",
+                role: "Private Sector Development | Strategic Partnerships Consultant",
+              },
+              {
+                name: "Dr T.H. Culhane",
+                role: "Patel College of Global Sustainability — Director of Climate Mitigation",
+              },
+              {
+                name: "Dr K. Banda",
+                role: "Co-Founder of Africycle Zambia",
+              },
             ].map((a) => (
-              <div key={a.name} className="rounded-2xl border border-border bg-card p-5 shadow-soft">
+              <div key={a.name} className="rounded-md border border-border bg-card p-5 shadow-soft">
                 <span className="text-xs font-600 uppercase tracking-[0.18em] text-muted-foreground">
                   Advisor
                 </span>
