@@ -9,9 +9,9 @@ import {
   Wallet,
   Boxes,
   Wrench,
-  MapPin,
   Recycle,
   Cloud,
+  MapPin,
   CheckCircle2,
   Mail,
   Phone,
@@ -33,13 +33,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Umodoro builds portable, modular biogas units that bring clean, affordable pay-as-you-go cooking energy to Zambia's urban markets — up to 44% cheaper than charcoal.",
+          "Umodoro builds portable biogas units that bring clean, affordable pay-as-you-go cooking energy to Zambia's urban markets.",
       },
       { property: "og:title", content: "Umodoro Biotechnology — Clean Biogas for Zambian Markets" },
       {
         property: "og:description",
-        content:
-          "Affordable, clean pay-as-you-go biogas replacing charcoal in dense urban markets across Zambia.",
+        content: "Clean, affordable pay-as-you-go biogas for Zambia's urban markets.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -53,7 +52,7 @@ export const Route = createFileRoute("/")({
 
 function Stat({ icon: Icon, value, label }: { icon: any; value: string; label: string }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+    <div className="rounded-lg border border-border bg-card p-6">
       <Icon className="h-6 w-6 text-accent" strokeWidth={2.2} />
       <p className="mt-4 font-display text-3xl font-700">{value}</p>
       <p className="mt-1 text-sm text-muted-foreground">{label}</p>
@@ -63,8 +62,7 @@ function Stat({ icon: Icon, value, label }: { icon: any; value: string; label: s
 
 function SectionTag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.18em] text-primary">
-      <Leaf className="h-3.5 w-3.5" />
+    <span className="text-xs font-600 uppercase tracking-[0.18em] text-primary">
       {children}
     </span>
   );
@@ -85,7 +83,7 @@ function Index() {
           </nav>
           <a
             href="#contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-600 text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-600 text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get in touch
           </a>
@@ -93,43 +91,37 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
+      <section className="bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.18em]">
-              Patent Pending · Zambia
-            </span>
-            <h1 className="mt-6 font-display text-4xl font-700 leading-[1.05] sm:text-5xl md:text-6xl">
+            <h1 className="font-display text-4xl font-700 leading-[1.05] sm:text-5xl md:text-6xl">
               Pay-As-You-Go Biogas for Zambia&apos;s Urban Markets
             </h1>
             <p className="mt-5 max-w-md text-lg text-primary-foreground/85">
-              Clean, affordable cooking energy that replaces smoky charcoal — up to
-              <span className="font-700 text-accent"> 44% cheaper</span>, paid for with a tap of mobile money.
+              Clean cooking energy, up to 44% cheaper than charcoal — paid with mobile money.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3 font-600 text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-600 text-accent-foreground transition-opacity hover:opacity-90"
               >
                 Partner with us <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#problem"
-                className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 px-6 py-3 font-600 transition-colors hover:bg-primary-foreground/10"
+                className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/25 px-6 py-3 font-600 transition-colors hover:bg-primary-foreground/10"
               >
                 See the problem
               </a>
             </div>
           </div>
-          <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-primary-foreground/15 shadow-glow">
-              <img
-                src={heroMarket.url}
-                alt="A market vendor cooking on a clean gas burner powered by Umodoro biogas"
-                className="aspect-[4/5] w-full object-cover"
-                loading="eager"
-              />
-            </div>
+          <div className="overflow-hidden rounded-lg border border-primary-foreground/15">
+            <img
+              src={heroMarket.url}
+              alt="A market vendor cooking on a clean gas burner powered by Umodoro biogas"
+              className="aspect-[4/5] w-full object-cover"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -137,7 +129,7 @@ function Index() {
       {/* Problem */}
       <section id="problem" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="order-2 overflow-hidden rounded-3xl shadow-soft md:order-1">
+          <div className="order-2 overflow-hidden rounded-lg md:order-1">
             <img
               src={charcoal.url}
               alt="A market vendor cooking over a smoky charcoal fire"
@@ -147,19 +139,18 @@ function Index() {
           </div>
           <div className="order-1 md:order-2">
             <SectionTag>The problem</SectionTag>
-            <h2 className="mt-5 text-3xl font-700 sm:text-4xl">
-              Charcoal is burning <span className="text-gradient-accent">health &amp; wealth</span>
+            <h2 className="mt-4 text-3xl font-700 sm:text-4xl">
+              Charcoal is burning health &amp; wealth
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We surveyed 30 businesses across 7 market zones in Lusaka. Vendors work up to 14-hour
-              days over open charcoal fires — and they told us they&apos;d gladly switch to a cleaner,
+              We surveyed 30 businesses across 7 Lusaka market zones. Vendors want a cleaner,
               cheaper option.
             </p>
-            <blockquote className="mt-6 rounded-2xl bg-muted p-5 text-sm italic text-foreground">
-              &ldquo;We work for 14 hours… our heads hurt and we feel like fainting every day. We
-              would gladly switch to a cheaper, cleaner option.&rdquo;
+            <blockquote className="mt-6 rounded-md bg-muted p-5 text-sm italic text-foreground">
+              &ldquo;We work for 14 hours… our heads hurt and we feel like fainting every day.
+              We would gladly switch to a cheaper, cleaner option.&rdquo;
               <span className="mt-2 block text-xs not-italic text-muted-foreground">
-                — Lusaka market vendor, Umodoro survey
+                — Lusaka market vendor
               </span>
             </blockquote>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -176,18 +167,17 @@ function Index() {
         <div className="mx-auto max-w-6xl px-5">
           <div className="max-w-2xl">
             <SectionTag>Our solution</SectionTag>
-            <h2 className="mt-5 text-3xl font-700 sm:text-4xl">
-              A biodigester built for dense urban markets
+            <h2 className="mt-4 text-3xl font-700 sm:text-4xl">
+              A biodigester built for urban markets
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Existing biodigesters are too large, permanent, or rely on costly imported parts — and
-              none were designed for busy city markets. Umodoro fills that gap with a portable,
-              robust unit made from local parts.
+              Existing biodigesters are too large or permanent for city markets. Ours is portable,
+              robust, and made from local parts.
             </p>
           </div>
 
           <div className="mt-12 grid items-center gap-10 md:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl shadow-soft">
+            <div className="overflow-hidden rounded-lg">
               <img
                 src={digester.url}
                 alt="The Umodoro biodigester: a black feed tank connected to a white modular gas tank"
@@ -197,12 +187,12 @@ function Index() {
             </div>
             <div className="grid gap-4">
               {[
-                { icon: Boxes, title: "Portable & Modular", text: "Stacks and scales to fit any market footprint." },
-                { icon: Wrench, title: "Robust Local Parts", text: "Built to last with near-zero maintenance, no imports." },
-                { icon: Recycle, title: "Turns Waste into Energy", text: "On-site biogas from organic market waste." },
+                { icon: Boxes, title: "Portable & modular", text: "Scales to fit any market footprint." },
+                { icon: Wrench, title: "Local parts", text: "Near-zero maintenance, no imports." },
+                { icon: Recycle, title: "Waste to energy", text: "Biogas from organic market waste." },
               ].map((f) => (
-                <div key={f.title} className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-primary">
+                <div key={f.title} className="flex gap-4 rounded-lg border border-border bg-card p-5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/15 text-primary">
                     <f.icon className="h-5 w-5" strokeWidth={2.2} />
                   </span>
                   <div>
@@ -211,11 +201,9 @@ function Index() {
                   </div>
                 </div>
               ))}
-              <div className="rounded-2xl bg-gradient-hero p-5 text-primary-foreground shadow-soft">
-                <p className="text-sm">
-                  <span className="font-700">Proven on the ground:</span> 3 prototypes across Lusaka,
-                  Chibombo &amp; Luanshya (2024–2026), 14 testers, 80% satisfaction.
-                </p>
+              <div className="rounded-lg bg-primary p-5 text-sm text-primary-foreground">
+                <span className="font-700">Proven on the ground:</span> 3 prototypes, 14 testers,
+                80% satisfaction (2024–2026).
               </div>
             </div>
           </div>
@@ -227,32 +215,32 @@ function Index() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <SectionTag>How it works</SectionTag>
-            <h2 className="mt-5 text-3xl font-700 sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-700 sm:text-4xl">
               Pay only for the gas you use
             </h2>
             <p className="mt-4 text-muted-foreground">
-              No upfront fuel costs. Vendors cook on clean gas and pay with mobile money, while
-              real-time metering keeps billing transparent and builds trust.
+              No upfront fuel costs. Cook on clean gas, pay with mobile money, track usage in
+              real time.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
+              <div className="rounded-lg border border-border bg-card p-5">
                 <Wallet className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Pay per use</h3>
-                <p className="mt-1 text-sm text-muted-foreground">No upfront fuel costs.</p>
+                <p className="mt-1 text-sm text-muted-foreground">No upfront costs.</p>
               </div>
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
+              <div className="rounded-lg border border-border bg-card p-5">
                 <Smartphone className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Mobile money</h3>
-                <p className="mt-1 text-sm text-muted-foreground">Easy, familiar payments.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Easy payments.</p>
               </div>
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
+              <div className="rounded-lg border border-border bg-card p-5">
                 <Receipt className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Clear billing</h3>
-                <p className="mt-1 text-sm text-muted-foreground">Real-time usage tracking.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Real-time tracking.</p>
               </div>
             </div>
           </div>
-          <div className="overflow-hidden rounded-3xl shadow-soft">
+          <div className="overflow-hidden rounded-lg">
             <img
               src={meter.url}
               alt="A vendor cooking next to an Umodoro pay-as-you-go gas meter"
@@ -263,26 +251,25 @@ function Index() {
         </div>
 
         {/* Energy networks */}
-        <div className="mt-16 grid items-center gap-10 rounded-3xl border border-border bg-secondary/40 p-8 md:grid-cols-2 md:p-10">
+        <div className="mt-16 grid items-center gap-10 rounded-lg border border-border bg-secondary/40 p-8 md:grid-cols-2 md:p-10">
           <div>
             <h3 className="text-2xl font-700 sm:text-3xl">On-site energy networks</h3>
             <p className="mt-3 text-muted-foreground">
-              Modular units produce biogas right where markets need it — and unlock extra revenue
-              beyond cooking fuel.
+              Units produce biogas where it&apos;s needed — and unlock revenue beyond cooking fuel.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm font-600 shadow-soft">
+              <span className="inline-flex items-center gap-2 rounded-md bg-card px-4 py-2 text-sm font-600">
                 <MapPin className="h-4 w-4 text-accent" /> Any market
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm font-600 shadow-soft">
+              <span className="inline-flex items-center gap-2 rounded-md bg-card px-4 py-2 text-sm font-600">
                 <Cloud className="h-4 w-4 text-accent" /> Carbon credits
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm font-600 shadow-soft">
+              <span className="inline-flex items-center gap-2 rounded-md bg-card px-4 py-2 text-sm font-600">
                 <Recycle className="h-4 w-4 text-accent" /> Waste management
               </span>
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl shadow-soft">
+          <div className="overflow-hidden rounded-md">
             <img
               src={unitMarket.url}
               alt="A modular Umodoro biogas unit installed in an outdoor market"
@@ -294,27 +281,27 @@ function Index() {
       </section>
 
       {/* Economics */}
-      <section className="bg-gradient-hero py-20 text-primary-foreground md:py-28">
+      <section className="bg-primary py-20 text-primary-foreground md:py-28">
         <div className="mx-auto max-w-6xl px-5">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-600 uppercase tracking-[0.18em]">
+            <span className="text-xs font-600 uppercase tracking-[0.18em] text-primary-foreground/70">
               The economics
             </span>
-            <h2 className="mt-5 text-3xl font-700 sm:text-4xl">A single unit pays for itself</h2>
+            <h2 className="mt-4 text-3xl font-700 sm:text-4xl">A single unit pays for itself</h2>
             <p className="mt-4 text-primary-foreground/85">
-              With conservative gas and fertilizer sales, each unit breaks even in just 4–9 months.
+              Each unit breaks even in 4–9 months.
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { value: "$150", label: "Gas revenue / month", sub: "10 vendors × $15" },
               { value: "+$250", label: "Fertilizer / month", sub: "~4000L by-product" },
-              { value: "$1,100", label: "One-off CapEx", sub: "hardware, lines & install" },
+              { value: "$1,100", label: "One-off CapEx", sub: "hardware & install" },
               { value: "4–9 mo", label: "Break-even", sub: "~$300–500 monthly profit" },
             ].map((c) => (
               <div
                 key={c.label}
-                className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 backdrop-blur-sm"
+                className="rounded-lg border border-primary-foreground/15 bg-primary-foreground/5 p-6"
               >
                 <p className="font-display text-4xl font-700 text-accent">{c.value}</p>
                 <p className="mt-2 font-600">{c.label}</p>
@@ -329,15 +316,15 @@ function Index() {
       <section id="team" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="max-w-2xl">
           <SectionTag>The people</SectionTag>
-          <h2 className="mt-5 text-3xl font-700 sm:text-4xl">Founder &amp; advisors</h2>
+          <h2 className="mt-4 text-3xl font-700 sm:text-4xl">Founder &amp; advisors</h2>
           <p className="mt-4 text-muted-foreground">
-            Led by a biotech founder with 7+ years of experience in the USA &amp; Zambia, and backed
-            by advisors at the frontier of digesters, waste management and private-sector growth.
+            A biotech founder with 7+ years in the USA &amp; Zambia, backed by advisors in
+            digesters, waste management and private-sector growth.
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="overflow-hidden rounded-lg border border-accent/30 bg-secondary/40 shadow-soft">
+          <div className="overflow-hidden rounded-lg border border-border bg-secondary/40">
             <img
               src={founder.url}
               alt="Mphatso Simbao, founder of Umodoro Biotechnology, receiving an award certificate"
@@ -348,8 +335,8 @@ function Index() {
               <span className="text-xs font-600 uppercase tracking-[0.18em] text-primary">Founder</span>
               <h3 className="mt-2 font-display text-2xl font-700">Mphatso Simbao</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                7+ years in biotech across the USA &amp; Zambia. 2+ years and $3,000 personally invested
-                in Umodoro prototypes. Winner of the 2026 FACE NDC Green Innovation Challenge.
+                7+ years in biotech across the USA &amp; Zambia. 2+ years and $3,000 personally
+                invested. Winner of the 2026 FACE NDC Green Innovation Challenge.
               </p>
             </div>
           </div>
@@ -368,7 +355,7 @@ function Index() {
                 role: "Co-Founder of Africycle Zambia",
               },
             ].map((a) => (
-              <div key={a.name} className="rounded-md border border-border bg-card p-5 shadow-soft">
+              <div key={a.name} className="rounded-md border border-border bg-card p-5">
                 <span className="text-xs font-600 uppercase tracking-[0.18em] text-muted-foreground">
                   Advisor
                 </span>
@@ -384,26 +371,24 @@ function Index() {
       <section id="contact" className="bg-secondary/40 py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <SectionTag>Get involved</SectionTag>
-          <h2 className="mt-5 text-3xl font-700 sm:text-4xl">
-            Help us build the future of Zambia&apos;s urban markets
+          <h2 className="mt-4 text-3xl font-700 sm:text-4xl">
+            Help us build the future of Zambia&apos;s markets
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            We&apos;re seeking a <span className="font-600 text-foreground">$3,900 grant</span> for a
-            one-year pilot near Lusaka Apex Medical University (LAMU) — 4 canteens and 6 vendors, with
-            university-backed data collection under an existing MoU. We&apos;re also looking for
-            partners and market access.
+            We&apos;re seeking a <span className="font-600 text-foreground">$3,900 grant</span> for
+            a one-year pilot near Lusaka Apex Medical University — plus partners and market access.
           </p>
 
           <div className="mx-auto mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
             {[
               "$3,900 grant for a 1-year pilot",
-              "4 canteens + 6 vendors at a market zone",
+              "4 canteens + 6 vendors",
               "University-backed data & deployment",
               "MoU with LAMU Health Sciences Dept",
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4 text-left text-sm font-500 shadow-soft"
+                className="flex items-center gap-3 rounded-md border border-border bg-card p-4 text-left text-sm font-500"
               >
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
                 {item}
@@ -414,13 +399,13 @@ function Index() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="mailto:umodoro@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-600 text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-600 text-primary-foreground transition-opacity hover:opacity-90"
             >
               <Mail className="h-4 w-4" /> umodoro@gmail.com
             </a>
             <a
               href="tel:+260776936094"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 font-600 shadow-soft transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 font-600 transition-opacity hover:opacity-80"
             >
               <Phone className="h-4 w-4 text-accent" /> +260 776 936 094
             </a>
