@@ -1,11 +1,13 @@
-import { Leaf } from "lucide-react";
+import logoAsset from "@/assets/umodoro-logo.png.asset.json";
 
 export function Logo({ className = "", showText = true }: { className?: string; showText?: boolean }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
-      <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-accent">
-        <Leaf className="h-5 w-5 text-accent-foreground" strokeWidth={2.4} />
-      </span>
+      <img
+        src={logoAsset.url}
+        alt="Umodoro Biotechnology logo"
+        className="h-9 w-9 object-contain"
+      />
       {showText && (
         <span className="flex flex-col leading-none">
           <span className="font-display text-lg font-700 tracking-tight">Umodoro</span>
