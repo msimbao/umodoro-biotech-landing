@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Leaf,
   HeartPulse,
   TrendingDown,
   Users,
@@ -16,14 +15,16 @@ import {
   Mail,
   Phone,
   ArrowRight,
+  Trophy,
+  Building2,
+  GraduationCap,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 import heroMarket from "@/assets/hero-market.png.asset.json";
-import meter from "@/assets/meter.png.asset.json";
+import appBalance from "@/assets/app-balance.jpg.asset.json";
 import charcoal from "@/assets/charcoal.jpg.asset.json";
-import unitMarket from "@/assets/unit-market.png.asset.json";
-import digester from "@/assets/digester.png.asset.json";
+import digesterUnit from "@/assets/digester-unit.png.asset.json";
 import founder from "@/assets/founder.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -179,9 +180,9 @@ function Index() {
           <div className="mt-12 grid items-center gap-10 md:grid-cols-2">
             <div className="overflow-hidden rounded-lg">
               <img
-                src={digester.url}
-                alt="The Umodoro biodigester: a black feed tank connected to a white modular gas tank"
-                className="aspect-[5/4] w-full object-cover"
+                src={digesterUnit.url}
+                alt="Two white Umodoro biodigester units connected by pipework, installed on a grassed site"
+                className="aspect-[4/3] w-full object-cover"
                 loading="lazy"
               />
             </div>
@@ -212,8 +213,8 @@ function Index() {
 
       {/* Pay as you go / model */}
       <section id="model" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          <div>
+        <div className="grid items-stretch gap-12 md:grid-cols-2">
+          <div className="flex flex-col">
             <SectionTag>How it works</SectionTag>
             <h2 className="mt-4 text-3xl font-700 sm:text-4xl">
               Pay only for the gas you use
@@ -222,18 +223,18 @@ function Index() {
               No upfront fuel costs. Cook on clean gas, pay with mobile money, track usage in
               real time.
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-lg border border-border bg-card p-5">
+            <div className="mt-8 grid flex-1 gap-4 sm:grid-cols-3">
+              <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-5">
                 <Wallet className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Pay per use</h3>
                 <p className="mt-1 text-sm text-muted-foreground">No upfront costs.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-5">
+              <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-5">
                 <Smartphone className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Mobile money</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Easy payments.</p>
               </div>
-              <div className="rounded-lg border border-border bg-card p-5">
+              <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-5">
                 <Receipt className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Clear billing</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Real-time tracking.</p>
@@ -242,9 +243,9 @@ function Index() {
           </div>
           <div className="overflow-hidden rounded-lg">
             <img
-              src={meter.url}
-              alt="A vendor cooking next to an Umodoro pay-as-you-go gas meter"
-              className="aspect-[4/3] w-full object-cover"
+              src={appBalance.url}
+              alt="The Umodoro app showing gas remaining, gas used and amount due, held beside the wall-mounted meter"
+              className="mx-auto aspect-[3/4] w-full max-w-md object-cover"
               loading="lazy"
             />
           </div>
@@ -271,9 +272,9 @@ function Index() {
           </div>
           <div className="overflow-hidden rounded-md">
             <img
-              src={unitMarket.url}
-              alt="A modular Umodoro biogas unit installed in an outdoor market"
-              className="aspect-[5/4] w-full object-cover"
+              src={heroMarket.url}
+              alt="A market vendor stirring nshima in a pot on a clean-burning Umodoro gas burner"
+              className="aspect-[10/11] w-full object-cover"
               loading="lazy"
             />
           </div>
@@ -306,6 +307,53 @@ function Index() {
                 <p className="font-display text-4xl font-700 text-accent">{c.value}</p>
                 <p className="mt-2 font-600">{c.label}</p>
                 <p className="mt-1 text-sm text-primary-foreground/70">{c.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Momentum */}
+      <section id="momentum" className="border-y border-border bg-secondary/40 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="max-w-2xl">
+            <SectionTag>Momentum</SectionTag>
+            <h2 className="mt-4 text-3xl font-700 sm:text-4xl">Recognition &amp; support</h2>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                icon: Trophy,
+                title: "Top 12 finalist",
+                text: "AUGTENFORD Startup Challenge — inaugural cohort",
+              },
+              {
+                icon: Users,
+                title: "Mentorship",
+                text: "Vista Ventures Social Impact Fund",
+              },
+              {
+                icon: Building2,
+                title: "Accelerator",
+                text: "NTBC — National Technology Business Center",
+              },
+              {
+                icon: GraduationCap,
+                title: "Accelerator",
+                text: "Harvard HealthLab",
+              },
+            ].map((a) => (
+              <div
+                key={a.text}
+                className="flex items-start gap-4 rounded-md border border-border bg-card p-5"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent/15 text-primary">
+                  <a.icon className="h-5 w-5" strokeWidth={2.2} />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg font-600">{a.title}</h3>
+                  <p className="mt-0.5 text-sm text-muted-foreground">{a.text}</p>
+                </div>
               </div>
             ))}
           </div>
