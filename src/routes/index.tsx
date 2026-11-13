@@ -213,8 +213,8 @@ function Index() {
 
       {/* Pay as you go / model */}
       <section id="model" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-        <div className="grid items-stretch gap-12 md:grid-cols-2">
-          <div className="flex flex-col">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div>
             <SectionTag>How it works</SectionTag>
             <h2 className="mt-4 text-3xl font-700 sm:text-4xl">
               Pay only for the gas you use
@@ -223,18 +223,18 @@ function Index() {
               No upfront fuel costs. Cook on clean gas, pay with mobile money, track usage in
               real time.
             </p>
-            <div className="mt-8 grid flex-1 gap-4 sm:grid-cols-3">
-              <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-5">
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-card p-5">
                 <Wallet className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Pay per use</h3>
                 <p className="mt-1 text-sm text-muted-foreground">No upfront costs.</p>
               </div>
-              <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-5">
+              <div className="rounded-lg border border-border bg-card p-5">
                 <Smartphone className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Mobile money</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Easy payments.</p>
               </div>
-              <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-5">
+              <div className="rounded-lg border border-border bg-card p-5">
                 <Receipt className="h-6 w-6 text-accent" strokeWidth={2.2} />
                 <h3 className="mt-3 font-600">Clear billing</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Real-time tracking.</p>
@@ -245,7 +245,7 @@ function Index() {
             <img
               src={appBalance.url}
               alt="The Umodoro app showing gas remaining, gas used and amount due, held beside the wall-mounted meter"
-              className="mx-auto aspect-[3/4] w-full max-w-md object-cover"
+              className="mx-auto aspect-[3/4] w-full max-w-[19rem] rounded-md object-cover"
               loading="lazy"
             />
           </div>
@@ -314,10 +314,12 @@ function Index() {
       </section>
 
       {/* Momentum */}
-      <section id="momentum" className="border-y border-border bg-secondary/40 py-20 md:py-28">
+      <section id="momentum" className="bg-accent py-20 text-accent-foreground md:py-28">
         <div className="mx-auto max-w-6xl px-5">
           <div className="max-w-2xl">
-            <SectionTag>Momentum</SectionTag>
+            <span className="text-xs font-600 uppercase tracking-[0.18em] text-accent-foreground">
+              Momentum
+            </span>
             <h2 className="mt-4 text-3xl font-700 sm:text-4xl">Recognition &amp; support</h2>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -334,25 +336,25 @@ function Index() {
               },
               {
                 icon: Building2,
-                title: "Accelerator",
-                text: "NTBC — National Technology Business Center",
+                title: "NTBC Accelerator",
+                text: "National Technology Business Center",
               },
               {
                 icon: GraduationCap,
-                title: "Accelerator",
+                title: "HealthLab Accelerator",
                 text: "Harvard HealthLab",
               },
             ].map((a) => (
               <div
                 key={a.text}
-                className="flex items-start gap-4 rounded-md border border-border bg-card p-5"
+                className="flex items-start gap-4 rounded-md bg-primary p-5 text-primary-foreground"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent/15 text-primary">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent text-accent-foreground">
                   <a.icon className="h-5 w-5" strokeWidth={2.2} />
                 </span>
                 <div>
                   <h3 className="font-display text-lg font-600">{a.title}</h3>
-                  <p className="mt-0.5 text-sm text-muted-foreground">{a.text}</p>
+                  <p className="mt-0.5 text-sm text-primary-foreground/80">{a.text}</p>
                 </div>
               </div>
             ))}
