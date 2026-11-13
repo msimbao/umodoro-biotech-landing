@@ -425,24 +425,22 @@ function Index() {
             Help us build the future of Zambia&apos;s markets
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            We&apos;re seeking a <span className="font-600 text-foreground">$3,900 grant</span> for
-            a one-year pilot near Lusaka Apex Medical University — plus partners and market access.
+            We&apos;re looking for partners and market access for a one-year pilot near Lusaka
+            Apex Medical University.
           </p>
 
-          <div className="mx-auto mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {[
-              "$3,900 grant for a 1-year pilot",
               "4 canteens + 6 vendors",
               "University-backed data & deployment",
-              "MoU with LAMU Health Sciences Dept",
             ].map((item) => (
-              <div
+              <span
                 key={item}
-                className="flex items-center gap-3 rounded-md border border-border bg-card p-4 text-left text-sm font-500"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm font-500"
               >
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
                 {item}
-              </div>
+              </span>
             ))}
           </div>
 
